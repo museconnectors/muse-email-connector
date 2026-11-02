@@ -98,8 +98,12 @@ from stdin and talks IMAP/SMTP itself).
 ## Bridge deployment (one-time, user side)
 
 1. In the Cloudflare dashboard (the account that hosts the domain's
-   DNS): Workers & Pages → Create → create a Worker and paste
-   `worker/muse-mail-bridge.js` as its code, then deploy.
+   DNS): Workers & Pages → Create → **Connect to Git** → select the
+   deployment-only repository `museconnectors/muse-mail-bridge` (it
+   holds this Worker plus a `wrangler.toml`) and deploy; no code
+   editing in the dashboard editor is needed, and later pushes
+   redeploy automatically. Alternatively, create a Worker manually and
+   paste `worker/muse-mail-bridge.js` as its code.
 2. On the Worker, add secrets: `BRIDGE_TOKEN` (a self-chosen long
    random string) and `MAIL_PASS` (the mailbox password). Neither value
    is shared with the assistant.

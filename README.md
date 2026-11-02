@@ -5,7 +5,7 @@
 ## 構成
 
 - `bin/mail_muse.py` — クライアント側ヘルパー。`check` / `list` / `read` / `send` の4コマンド。
-- `worker/muse-mail-bridge.js` — Cloudflare Workers 版の中間アダプタ (ブリッジ)。Workers の TCP ソケットで IMAP/SMTP を話します。
+- `worker/muse-mail-bridge.js` — Cloudflare Workers 版の中間アダプタ (ブリッジ)。Workers の TCP ソケットで IMAP/SMTP を話します。デプロイ専用リポジトリ [museconnectors/muse-mail-bridge](https://github.com/museconnectors/muse-mail-bridge) から、Git 連携でそのままデプロイもできます (ダッシュボードのコードエディタで貼り替える必要はありません)。
 - `bridge/muse-mail-bridge.php` — Web スペースのある契約向けの PHP 版ブリッジ (Workers 版と同じ役割)。
 - `bridge/mail-bridge-config.sample.php` — PHP 版の設定サンプル。
 - `CONNECTOR.md` — セットアップと運用の詳細ドキュメント。
